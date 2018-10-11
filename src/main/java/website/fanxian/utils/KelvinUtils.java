@@ -50,4 +50,8 @@ public class KelvinUtils {
         runnable.run();
         printEnd();
     }
+
+    public static void version(){
+        System.out.println("version 1.0.2");
+    }
 }
