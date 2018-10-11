@@ -1,4 +1,4 @@
-package com.github.KelvinFanXian.utils;
+package website.fanxian.utils;
 
 import org.apache.commons.lang.StringUtils;
 

@@ -1,4 +1,4 @@
-package com.github.KelvinFanXian.pattern;
+package website.fanxian.pattern;
 
 import java.util.regex.Pattern;
 
