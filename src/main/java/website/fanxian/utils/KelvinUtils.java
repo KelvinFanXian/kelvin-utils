@@ -22,7 +22,7 @@ public class KelvinUtils {
      *      @Test public void _1method1(){}
      *      @Test public void _2method2(){}
      */
-    public static Consumer<? super String> consumer_genTestMethod = t -> System.out.print("@Test\npublic void _"+atomicInteger.incrementAndGet()+t+"(){\n}\n");
+    public static Consumer<? super String> consumer_genTestMethod = t -> System.out.print("@Test\npublic void _"+atomicInteger.incrementAndGet()+t+"(){/*\n*/\n}\n");
 
     /**
      * 处理字符串
