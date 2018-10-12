@@ -40,15 +40,19 @@ public class KelvinUtils {
 
     /// prints
 
-    public static void printStart() {System.out.printf("--begin-------------------------\n\n\n");}
-    public static void printEnd() {System.out.printf("\n\n\n--end-------------------------\n");}
+    public static void printStart(String begin) {System.out.printf("--begin "+begin+"-------------------------\n\n\n");}
+    public static void printEnd(String end) {System.out.printf("\n\n\n--"+end+" end-------------------------\n");}
     public static void print(String s) {
         print(()->System.out.print(s));
     }
     public static void print(Runnable runnable) {
-        printStart();
+        print("", runnable);
+    }
+
+    public static void print(String string,Runnable runnable) {
+        printStart(string);
         runnable.run();
-        printEnd();
+        printEnd(string);
     }
 
     public static void version(){
