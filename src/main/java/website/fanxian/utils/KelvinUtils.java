@@ -22,7 +22,10 @@ public class KelvinUtils {
      *      @Test public void _1method1(){}
      *      @Test public void _2method2(){}
      */
-    public static Consumer<? super String> consumer_genTestMethod = t -> System.out.print("@Test\npublic void _"+atomicInteger.incrementAndGet()+t+" throws Exception(){/*\n*/\n}\n");
+    public static Consumer<? super String> consumer_genTestMethod = t -> {
+        t = t.replaceAll("[^0-9A-Za-z_]", "_");
+        System.out.print("@Test\npublic void _"+atomicInteger.incrementAndGet()+t+" throws Exception(){/*\n*/\n}\n");
+    };
     /**
      * "a b c" =>
      *      1) a
