@@ -23,7 +23,12 @@ public class KelvinUtils {
      *      @Test public void _2method2(){}
      */
     public static Consumer<? super String> consumer_genTestMethod = t -> System.out.print("@Test\npublic void _"+atomicInteger.incrementAndGet()+t+" throws Exception(){/*\n*/\n}\n");
-
+    /**
+     * "a b c" =>
+     *      1) a
+     *      2) b
+     *      3) c
+     */
     public static Consumer<? super String> consumer_genol = t -> System.out.print(atomicInteger.incrementAndGet()+") "+t+"\n");
 
     /**
