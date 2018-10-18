@@ -24,6 +24,8 @@ public class KelvinUtils {
      */
     public static Consumer<? super String> consumer_genTestMethod = t -> System.out.print("@Test\npublic void _"+atomicInteger.incrementAndGet()+t+" throws Exception(){/*\n*/\n}\n");
 
+    public static Consumer<? super String> consumer_genol = t -> System.out.print(atomicInteger.incrementAndGet()+") "+t+"\n");
+
     /**
      * 处理字符串
      * @param s
