@@ -24,7 +24,7 @@ public class KelvinUtils {
      */
     public static Consumer<? super String> consumer_genTestMethod = t -> {
         t = t.replaceAll("[^0-9A-Za-z_]", "\\$");
-        System.out.print("@Test\npublic void _"+atomicInteger.incrementAndGet()+t+" throws Exception(){/*\n*/\n}\n");
+        System.out.print("@Test\npublic void _"+atomicInteger.incrementAndGet()+t+"() throws Exception{/*\n*/\n}\n");
     };
     /**
      * "a b c" =>
