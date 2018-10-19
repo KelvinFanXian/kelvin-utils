@@ -169,4 +169,68 @@ public class IOUtils {
             }
         }
     }
+
+    /// 文件和目录操作
+
+    /**
+     * 计算一个目录下的所有文件的大小（包括子目录）
+     * @param directory
+     * @return
+     */
+    public static long sizeOfDirectory(final File directory) {
+        long size = 0;
+        if(directory.isFile()) {
+            return directory.length();
+        } else {
+            for(File file : directory.listFiles()) {
+                if(file.isFile()) {
+                    size += file.length();
+                } else {
+                    size += sizeOfDirectory(file);
+                }
+            }
+        }
+        return size;
+    }
+
+    /**
+     * 在一个目录下，查找所有给定文件名的文件
+     * @param directory
+     * @param fileName
+     * @return
+     */
+    public static Collection<File> findFile(final File directory,
+                                            final String fileName) {
+        List<File> files = new ArrayList<>();
+        for(File f : directory.listFiles()) {
+            if(f.isFile() && f.getName().equals(fileName)) {
+                files.add(f);
+            } else if(f.isDirectory()) {
+                files.addAll(findFile(f, fileName));
+            }
+        }
+        return files;
+    }
+
+    /**
+     * 删除非空目录
+     * @param file
+     * @throws IOException
+     */
+    public static void deleteRecursively(final File file) throws IOException {
+        if(file.isFile()) {
+            if(!file.delete()) {
+                throw new IOException("Failed to delete "
+                        + file.getCanonicalPath());
+            }
+        } else if(file.isDirectory()) {
+            for(File child : file.listFiles()) {
+                deleteRecursively(child);
+            }
+            if(!file.delete()) {
+                throw new IOException("Failed to delete "
+                        + file.getCanonicalPath());
+            }
+        }
+    }
 }
