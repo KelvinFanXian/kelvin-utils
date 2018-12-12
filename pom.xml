@@ -14,6 +14,25 @@
             <artifactId>commons-lang</artifactId>
             <version>2.6</version>
         </dependency>
+
+        <!-- spreadsheet imp/exp Excel based poi-->
+        <dependency>
+            <groupId>com.supwisdom</groupId>
+            <artifactId>spreadsheet-mapper-core</artifactId>
+            <version>1.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.supwisdom</groupId>
+            <artifactId>spreadsheet-mapper-joda</artifactId><!-- 对joda的支持 -->
+            <version>1.0.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.1.3.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
     <build>
