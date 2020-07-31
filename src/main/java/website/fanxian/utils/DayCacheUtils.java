@@ -13,7 +13,7 @@ import java.util.Map;
  * @date 2020/7/21 下午4:07
  */
 public final class DayCacheUtils {
-    private static final Map<String, Object> day_cache = new HashMap<>(1);
+    private static final Map<String, Object> day_cache = new HashMap<>();
     private static String getDay() {
         return DateFormatUtils.format(new Date(), "yyyy-MM-dd");
     }
